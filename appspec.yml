@@ -1,0 +1,12 @@
+version: 0.0
+
+Resources:
+  - EKSDeployHook:
+      Type: AWS::Lambda::Function
+      Properties:
+        Name: eks_lambda_hooks   # must match your Terraform Lambda name
+
+Hooks:
+  BeforeAllowTraffic:
+    - location: eks_lambda_hooks
+      timeout: 60
