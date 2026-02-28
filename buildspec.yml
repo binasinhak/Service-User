@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    IMAGE_REPO_NAME: order-service
+    IMAGE_REPO_NAME: user-service
     AWS_REGION: us-east-1
 
 phases:
