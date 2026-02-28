@@ -18,7 +18,7 @@ phases:
       - echo Logging in to ECR
       - ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
       - REPOSITORY_URI=$ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE_REPO_NAME
-      - IMAGE_TAG=$CODEBUILD_RESOLVED_SOURCE_VERSION:0:7 # first 7 characters of the commit hash
+      - IMAGE_TAG=$CODEBUILD_RESOLVED_SOURCE_VERSION # first 7 characters of the commit hash
       - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $REPOSITORY_URI
 
   build:
